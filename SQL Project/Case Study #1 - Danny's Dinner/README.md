@@ -5,7 +5,7 @@ View the case study [here](https://8weeksqlchallenge.com/case-study-1/)
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/edit/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#introduction)
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#introduction)
 - [Problem Statement](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/edit/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#problem-statement)
 - [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/edit/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#dataset)
 - [Entity Relationship Diagram](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/edit/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#entity-relationship-diagram)
