@@ -1,4 +1,5 @@
 Case Study #1 - Danny's Dinner 🍜
+
 ----------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/9c273c84-cf9b-4086-b1f9-e7a1f3575503)
 View the case study [here](https://8weeksqlchallenge.com/case-study-1/)
