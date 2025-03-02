@@ -10,7 +10,7 @@ View the case study [here](https://8weeksqlchallenge.com/case-study-1/)
 - [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#dataset)
 - [Entity Relationship Diagram](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#entity-relationship-diagram)
 - [Case Study Questions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/README.md#case-study-questions)
-- [Case Study Solutions]()
+- [Case Study Solutions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/Danny%E2%80%99s%20Diner%20Case.sql)
 
 --------------------------------------------------------------------
 # Introduction
@@ -82,6 +82,7 @@ This dataset have three tables:
 9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
+Click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%231%20-%20Danny's%20Dinner/Danny%E2%80%99s%20Diner%20Case.sql) to view my solutions for this case study!
 
 
 
