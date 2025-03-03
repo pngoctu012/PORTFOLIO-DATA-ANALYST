@@ -1,4 +1,4 @@
-/* Retrieve a report containing the following information: customer_id, order_id, product_id, product_group, sub_category, category. These orders must meet the following conditions:
+/* 1.Retrieve a report containing the following information: customer_id, order_id, product_id, product_group, sub_category, category. These orders must meet the following conditions:
 - Incurred in January 2017
 - product_group is not 'payment' */
 -- Step 1: Join two tables to take product_group column for the second condition.
@@ -10,7 +10,7 @@ LEFT JOIN product AS pro
 WHERE MONTH(transaction_date) = 1 AND product_group != 'payment' 
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* Retrieve a report that includes the following information: customer_id, order_id, product_id, product_group, category, payment name. These orders must meet the following conditions:
+/* 2.Retrieve a report that includes the following information: customer_id, order_id, product_id, product_group, category, payment name. These orders must meet the following conditions:
 - Occurred between January and June 2017
 - Have a category type of shopping
 - Paid via Bank Account */
@@ -27,7 +27,7 @@ WHERE MONTH(transaction_date) < 7
     AND [name] = 'banking account'
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* In 2017, what is the number of orders and the proportion of each product category in each product_group? (Only count successful orders) */
+/* 3.In 2017, what is the number of orders and the proportion of each product category in each product_group? (Only count successful orders) */
 -- Step 1: Join three tables and apply condition that is only successful orders
 -- Step 2: Group by product_group and category, count number of orders per category
 -- Step 3: Use windown function sum to calculate number of orders per group
@@ -49,7 +49,7 @@ SELECT *,
 FROM table_group
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* Please indicate in 2017, how many orders did each customer buy, how many product categories, how many sub_categories, and how much did they pay? (Only count successful orders with product_group "payment")
+/* 4.Please indicate in 2017, how many orders did each customer buy, how many product categories, how many sub_categories, and how much did they pay? (Only count successful orders with product_group "payment")
 From the above results, please indicate how many customers have a total amount greater than the average amount of all customers? */
 -- Step 1: Join three tables and apply condition that are only successful orders and product_group = 'payment'
 -- Step 2: Group by customer and calculate number of orders, number of categories, number of sub categories and total amount
@@ -79,7 +79,7 @@ FROM table_avg
 WHERE total_payment > avg_payment
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* Assuming you are a product manager for billing products (category = 'Billing'), how many orders were successfully completed and how many orders were unsuccessful each month in 2017? */
+/* 5.Assuming you are a product manager for billing products (category = 'Billing'), how many orders were successfully completed and how many orders were unsuccessful each month in 2017? */
 -- Step 1: Join three tables to take category column for the condition.
 -- Step 2: Group by month and count number of successful orders
 -- Step 3: Execute similarly to Step 1 and 2 for unsuccessful orders
@@ -101,7 +101,7 @@ WITH table_join AS (
 ORDER BY [month], [status]
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* In 2017 and 2018, find out the TOP 3 months (in each year) with the most unsuccessful payment orders? */
+/* 6.In 2017 and 2018, find out the TOP 3 months (in each year) with the most unsuccessful payment orders? */
 -- Step 1: Union two tables history of 2017 and 2018 and extract only unsuccessful payments
 -- Step 2: Group by year, month and count number of unsuccessful payments
 -- Step 3: Use windown function row_number to rank months of each year by number of payments
@@ -125,7 +125,7 @@ FROM table_rank
 WHERE rank <= 3
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* To be able to track the business situation on a daily basis, create a detailed report calculating the total number of orders (successful) by month, quarter, year as suggested below:
+/* 7.To be able to track the business situation on a daily basis, create a detailed report calculating the total number of orders (successful) by month, quarter, year as suggested below:
 (Only calculate data for 2017 and product group (product_group) is "top-up account") */ 
 -- Step 1: Join three tables, apply two conditions and extract quarter from transaction_date
 -- Step 2: Group by year, quarter, month and count number of orders by month
@@ -151,7 +151,7 @@ SELECT *,
 FROM table_group
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* How many days is the gap between the first and second orders for each customer? (Only 2017 data and "top-up account" product_group are calculated) */
+/* 8.How many days is the gap between the first and second orders for each customer? (Only 2017 data and "top-up account" product_group are calculated) */
 -- Step 1: Join three tables, apply two conditions and use windown function row_number to rank orders by transaction_date
 -- Step 2: Extract the first and second orders of each customer (row_num = 1,2) and move transaction_date down one row to create previous time column
 -- Step 3: Calculate the days gap between the first and second orders
@@ -175,7 +175,7 @@ FROM table_row
 WHERE rank < 3
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* Tell me the trend of the number of successful payment transactions with promotion (promotion_trans) on a monthly basis and account for how much of the total number of successful payment transactions (promotion_rate)? */
+/* 9.Tell me the trend of the number of successful payment transactions with promotion (promotion_trans) on a monthly basis and account for how much of the total number of successful payment transactions (promotion_rate)? */
 -- Step 1: Group by month and count number of promotion transactions (promotion_id != 0)
 -- Step 2: Extract similarly for total number of successful payment transactions
 -- Step 3: Join two new tables and calculate promotion rate
@@ -190,7 +190,7 @@ WHERE [description] = 'success'
 GROUP BY MONTH(transaction_date) 
 
 --------------------------------------------------------------------------------------------------------------------------------
-/* Out of the total number of successful paying customer enjoy the promotion, how many % of customer have incurred any other successful payment orders that are not promotional orders? */
+/* 10.Out of the total number of successful paying customer enjoy the promotion, how many % of customer have incurred any other successful payment orders that are not promotional orders? */
 -- Step 1: Create new column descibe status (normal or promotion) and ranking orders by transaction_date
 -- Step 2: Create previous_status column by lag function to move status down 1 row
 -- Step 3: Count number of customers use promotion by status = 'promotion' and count number of customers convert by status = 'normal' + previous status = 'promotion'
@@ -214,7 +214,7 @@ SELECT
 FROM table_lag
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* COHORT ANALYSIS 
+/* 11.COHORT ANALYSIS 
 As you know that 'Electric bill' is the most popular product in the Billing group. You want to evaluate the quality of user acquisition in 2017 by the retention metric. */
 -- Step 1: Declare two variables are query and column list to create a value chain for pivot table
 -- Step 2: Set value for @column_list by string_agg function 
@@ -272,7 +272,7 @@ SET @query =
 EXEC (@query)
 
 -----------------------------------------------------------------------------------------------------------------------------
-/* In 2017, the MKT team launched many promotional campaigns for customers but did not limit the number of uses/person. You need to evaluate how the number of promotions/person is distributed? Is there a phenomenon of 1 group participating too many times and creating a lot of costs? */
+/* 12.In 2017, the MKT team launched many promotional campaigns for customers but did not limit the number of uses/person. You need to evaluate how the number of promotions/person is distributed? Is there a phenomenon of 1 group participating too many times and creating a lot of costs? */
 -- Step 1: Join table, extract successful transaction and promotional transactions
 -- Step 2: Group by customer and count number of promotional transactions, calculate total cost per customer
 -- Step 3: Rank customer by number of promotional transactions
