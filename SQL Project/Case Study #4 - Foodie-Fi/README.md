@@ -5,11 +5,11 @@ View the case study [here](https://8weeksqlchallenge.com/case-study-3/)
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction]()
-- [Dataset]()
-- [Entity Relationship Diagram]()
-- [Case Study Questions]()
-- [Case Study Solutions]()
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi#introduction)
+- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi#dataset)
+- [Entity Relationship Diagram](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi#entity-relationship-diagram)
+- [Case Study Questions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi#case-study-questions)
+- [Case Study Solutions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi/Foodie-Fi.sql)
 
 -------------------------------------------------------------------
 # Introduction
@@ -93,4 +93,4 @@ All datasets exist within the foodie_fi database schema - be sure to include thi
 9. Can you further breakdown this average value into 30 day periods (i.e. 0-30 days, 31-60 days etc)
 10. How many customers downgraded from a pro monthly to a basic monthly plan in 2020?
 
-Click [here]() to view my solutions for this case study!
+Click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%234%20-%20Foodie-Fi/Foodie-Fi.sql) to view my solutions for this case study!
