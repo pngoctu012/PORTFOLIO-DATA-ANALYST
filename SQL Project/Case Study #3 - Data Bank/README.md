@@ -1,4 +1,4 @@
-Case Study #1 - Data Bank 🏦
+Case Study #3 - Data Bank 🏦
 --------------------------------------------------------------------------------
 ![image](https://github.com/user-attachments/assets/ea3b3601-7857-46c6-8287-0f98c842dfb7)
 View the case study [here](https://8weeksqlchallenge.com/case-study-4/)
