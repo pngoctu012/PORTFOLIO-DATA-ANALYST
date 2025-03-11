@@ -5,10 +5,9 @@ View the case study [here](https://8weeksqlchallenge.com/case-study-7/)
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction]()
-- [Dataset]()
-- [Entity Relationship Diagram]()
-- [Case Study Questions]()
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%235%20-%20Balanced%20Tree%20Clothing%20Co.#introduction)
+- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%235%20-%20Balanced%20Tree%20Clothing%20Co.#dataset)
+- [Case Study Questions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/SQL%20Project/Case%20Study%20%235%20-%20Balanced%20Tree%20Clothing%20Co.#case-study-questions)
 - [Case Study Solutions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/SQL%20Project/Case%20Study%20%235%20-%20Balanced%20Tree%20Clothing%20Co./Balanced%20Tree%20Clothing%20Co)
 
 --------------------------------------------------------------------
