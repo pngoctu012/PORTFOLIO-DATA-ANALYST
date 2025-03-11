@@ -1,0 +1,199 @@
+------------------------------------- A. High Level Sales Analysis -----------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+/* 1. What was the total quantity sold for all products? */ 
+-- Calculate quantity sold for all products by sum function
+select sum(qty) as quantity_sold
+from sales
+
+------------------------------------------------------------------------------------------------------------
+/* 2. What is the total generated revenue for all products before discounts? */
+-- Calculate revenue of each transactions by qty*price and sum them to have total revenue
+select sum(qty*price) as total_revenue_before_discounts
+from sales
+
+------------------------------------------------------------------------------------------------------------
+/* 3. What was the total discount amount for all products? */
+-- Calculate discount amount equal to qty*price*discount percent and sum them to have total discount amount
+select sum(qty*(price*discount/100)) as total_discount_amount
+from sales
+
+---------------------------------------- B. Transaction Analysis -------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+/* 1. How many unique transactions were there? */ 
+-- Count number of transactions use distinct
+select count(distinct txn_id) as number_transactions
+from sales
+
+------------------------------------------------------------------------------------------------------------
+/* 2. What is the average unique products purchased in each transaction? */ 
+-- Step 1: Group by transaction id and count number of products per transaction
+-- Step 2: Calculate average products
+with table_group as (
+    select txn_id,
+        count(distinct prod_id) as number_products
+    from sales 
+    group by txn_id
+)
+select avg(number_products) as average_products_per_transaction
+from table_group
+
+------------------------------------------------------------------------------------------------------------
+/* 3. What are the 25th, 50th and 75th percentile values for the revenue per transaction? */ 
+-- Step 1: Group by transaction id and sum revenue for each transaction
+-- Step 2: Use percentile_cont function to extract 25th, 50th and 75th percentile values for the revenue
+with table_group as (
+    select txn_id,
+        sum(price*qty*(100-discount)/100) as revenue
+    from sales 
+    group by txn_id
+)
+select distinct
+    percentile_cont(0.25) within group (order by revenue desc) over () as percentile_25th,
+    percentile_cont(0.5) within group (order by revenue desc) over () as percentile_50th,
+    percentile_cont(0.75) within group (order by revenue desc) over () as percentile_75th
+from table_group
+
+/* 4. What is the average discount value per transaction? */
+-- Step 1: Group by transaction id and sum discount value for each transaction
+-- Step 2: Calculate average discount value
+with table_group as (
+    select txn_id,
+        sum(price*qty*discount/100) as discount_value
+    from sales 
+    group by txn_id
+)
+select avg(discount_value) as average_discount_per_transaction
+from table_group
+
+/* 5. What is the percentage split of all transactions for members vs non-members? */
+-- Step 1: Group by member and count number of transactions per member status
+-- Step 2: Calculate total number of transactions of all member status and use it to calculate percentage split of number of transactions for members and non-members
+with table_group as (
+    select member,
+        count(distinct txn_id) as number_transactions
+    from sales
+    group by member
+)
+select *,
+    sum(number_transactions) over () as total_transactions,
+    format(cast(number_transactions as float) /sum(number_transactions) over (), 'p') as [percentage]
+from table_group
+
+/* 6. What is the average revenue for member transactions and non-member transactions?*/ 
+-- Group by and calculate average revenue of member and non-member transactions
+select member,
+    avg(price*qty*(100-discount)/100) as average_revenue
+from sales
+group by member
+
+------------------------------------------ C. Product Analysis ---------------------------------------------
+
+------------------------------------------------------------------------------------------------------------
+/* 1. What are the top 3 products by total revenue before discount? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by product_name and calculate total revenue before discount. After that, extrac top 3 product_name
+select top 3 product_name,
+    sum(sales.price*qty) as revenue_before_discount
+from sales 
+left join product_details as detail
+    on sales.prod_id = detail.product_id
+group by product_name
+
+/* 2. What is the total quantity, revenue and discount for each segment? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by segment_name and calculate total quantity, revenue and discount for each segment 
+select segment_name,
+    sum(qty) as total_quantity,
+    sum(sales.price*qty) as total_revenue,
+    sum(sales.price*qty*discount/100) as total_discount
+from sales 
+left join product_details as detail
+    on sales.prod_id = detail.product_id
+group by segment_name
+
+/* 3. What is the top selling product for each segment? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by segment_name, product_name and calculate total quantity, revenue and discount for each product_name
+select segment_name, product_name, 
+    sum(qty) as total_quantity
+from sales 
+left join product_details as detail
+    on sales.prod_id = detail.product_id
+group by segment_name, product_name
+
+/* 4. What is the total quantity, revenue and discount for each category? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by segment_name and calculate total quantity, revenue and discount for each category 
+select category_name,
+    sum(qty) as total_quantity,
+    sum(sales.price*qty) as total_revenue,
+    sum(sales.price*qty*discount/100) as total_discount
+from sales 
+left join product_details as detail
+    on sales.prod_id = detail.product_id
+group by category_name
+
+/* 5. What is the top selling product for each category? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by category_name, product_name and calculate total quantity, revenue and discount for each product_name
+select category_name, product_name, 
+    sum(qty) as total_quantity
+from sales 
+left join product_details as detail
+    on sales.prod_id = detail.product_id
+group by category_name, product_name
+
+/* 6. What is the percentage split of revenue by product for each segment? */ 
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by segment_name, product_name and calculate revenue after discount for each product
+-- Step 3: Calculate total revenue of all segments and use it to calculate percentage split of revenue by product per segment
+with table_group as (
+    select segment_name, product_name, 
+        sum(sales.price*qty*(100-discount)/100) as revenue
+    from sales 
+    left join product_details as detail
+        on sales.prod_id = detail.product_id
+    group by segment_name, product_name
+)
+select *,
+    sum(revenue) over (partition by segment_name) as total_revenue,
+    format(cast(revenue as float)/sum(revenue) over (partition by segment_name), 'p') as [percentage]
+from table_group
+order by segment_name
+
+/* 7. What is the percentage split of revenue by segment for each category? */
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by category_name, segment_name and calculate revenue after discount for each segment
+-- Step 3: Calculate total revenue of all categories and use it to calculate percentage split of revenue by segment per category
+with table_group as (
+    select category_name, segment_name, 
+        sum(sales.price*qty*(100-discount)/100) as revenue
+    from sales 
+    left join product_details as detail
+        on sales.prod_id = detail.product_id
+    group by category_name, segment_name
+)
+select *,
+    sum(revenue) over (partition by category_name) as total_revenue,
+    format(cast(revenue as float)/sum(revenue) over (partition by category_name), 'p') as [percentage]
+from table_group
+order by category_name
+
+/* 8. What is the percentage split of total revenue by category? */ 
+-- Step 1: Join table sales and product_details to have enough information for calculating revenue
+-- Step 2: Group by category_name and calculate revenue after discount for each category
+-- Step 3: Calculate total revenue of all categories and use it to calculate percentage split of revenue for each category
+with table_group as (
+    select category_name, 
+        sum(sales.price*qty*(100-discount)/100) as revenue
+    from sales 
+    left join product_details as detail
+        on sales.prod_id = detail.product_id
+    group by category_name
+)
+select *,
+    sum(revenue) over () as total_revenue,
+    format(cast(revenue as float)/sum(revenue) over (), 'p') as [percentage]
+from table_group
