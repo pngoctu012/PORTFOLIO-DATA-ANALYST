@@ -11,11 +11,11 @@ Project #1 - Marketing Performance Analyst
 
   [3.1. Define Problem](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#31-define-problem)
   
-  [3.2. Disaggregate Problem]()
+  [3.2. Disaggregate Problem](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#32-disaggregate-problem)
   
-  [3.3. Analyze Problem]()
+  [3.3. Analyze Problem](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#33-analyze-problem)
   
-  [3.4. Solutions]()
+  [3.4. Solutions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#34-solutions)
 
 ------------------------------------------------------------------
 # **1. Introduction**
