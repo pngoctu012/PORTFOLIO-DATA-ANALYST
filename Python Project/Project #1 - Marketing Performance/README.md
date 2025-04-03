@@ -3,13 +3,13 @@ Project #1 - Marketing Performance Analyst
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-[1. Introduction]()
+[1. Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#1-introduction)
 
-[2. Dataset]()
+[2. Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#2-dataset)
 
-[3. Project Solutions]()
+[3. Project Solutions](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#3-project-solutions)
 
-  [3.1. Define Problem]()
+  [3.1. Define Problem](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Python%20Project/Project%20%231%20-%20Marketing%20Performance#31-define-problem)
   
   [3.2. Disaggregate Problem]()
   
@@ -92,7 +92,20 @@ To reach the full dataset, please click to this [Link](https://drive.google.com/
 
 
 
+------------------------------------------------------------------
+## **3.2. Disaggregate Problem**
 
+
+
+------------------------------------------------------------------
+## **3.3. Analyze Problem**
+
+
+
+
+
+------------------------------------------------------------------
+## **3.4. Solutions**
 
 
 
