@@ -89,24 +89,21 @@ To reach the full dataset, please click to this [Link](https://drive.google.com/
 ------------------------------------------------------------------
 # **3. Project Solutions**
 ## **3.1. Define Problem**
-
-
+![image](https://github.com/user-attachments/assets/a163d3fa-006f-43e0-bec4-c04ba5b71190)
 
 ------------------------------------------------------------------
 ## **3.2. Disaggregate Problem**
-
-
+![image](https://github.com/user-attachments/assets/4277578c-2589-4bb8-b630-3cf7814b2660)
 
 ------------------------------------------------------------------
 ## **3.3. Analyze Problem**
-
-
-
-
+"View my detailed analysis process for this project [here](https://colab.research.google.com/drive/11qBAJohCNyrHFkv54wygHhjsohz_Ucvh?usp=sharing)!"
 
 ------------------------------------------------------------------
 ## **3.4. Solutions**
-
+- Focus on advertising content or visibility because more number of advertisings not bring more impressions, CTR and CR. 
+- Optimized budget distribution for ad format and promotion type to improve profitability. Based on the result of P&L in October, the store should spend more for precise format or coupon and promotion code.
+- Execute more promotion on special days. At the hypothesis 4, promotion on Black Friday and Cyber Monday bring the oustanding performance on CR. Maybe, it depends on percent of discount or attraction of customer on discount days (such as: double day, Black Friday,...)
 
 
 
