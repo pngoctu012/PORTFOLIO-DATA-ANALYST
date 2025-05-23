@@ -3,10 +3,10 @@ DAIRY GOODS SALES DASHBOARD
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction]()
-- [Dataset]()
-- [Solution]()
-- [Results]()
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#introduction)
+- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#dataset)
+- [Solution](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#solution)
+- [Results](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#results)
 
 --------------------------------------------------------------------
 # Introduction
