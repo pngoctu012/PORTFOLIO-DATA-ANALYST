@@ -1,18 +1,18 @@
-DAIRY GOODS SALES DASHBOARD
+COVID-19 ANALYSIS DASHBOARD
 ----------------------------------------------------------------
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#introduction)
-- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#dataset)
-- [Solution](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#solution)
-- [Results](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#results)
+- [Introduction]()
+- [Dataset]()
+- [Solution]()
+- [Results]()
 
 --------------------------------------------------------------------
 # Introduction
-This dataset comprises dairy-based products collected as part of my Data Analyst course. It covers the period from 2019 to 2022 and specifically focuses on selected dairy brands operating across various states and union territories of India.
+The Covid-19 dataset is a comprehensive collection of information about the outbreak and spread of the Covid-19 pandemic worldwide. Compiled from reliable sources such as the World Health Organization (WHO), the Centers for Disease Control and Prevention (CDC), and national health agencies, this dataset includes statistics on confirmed cases, recoveries, deaths, and vaccination statuses by country and territory.
 
-Based on this dataset, we can perform a comprehensive analysis of the business performance of dairy farms, including evaluating the productivity of individual farms, the performance of different dairy products, and the success of associated brands. Additionally, the data allows for a thorough inventory analysis, including stock levels, sales trends, stock turnover, and restocking needs. This analysis will provide insights into operational efficiency, product demand, and supply chain management across various regions and distribution channels.
+You are tasked with creating a dashboard to effectively monitor and analyze this data.
 
 -------------------------------------------------------------------
 # Dataset
