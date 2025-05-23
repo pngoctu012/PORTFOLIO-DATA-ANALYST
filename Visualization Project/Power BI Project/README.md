@@ -86,5 +86,5 @@ Please, click [here](https://www.canva.com/design/DAGn8Z3NJOk/NPP56MwyU9LJSfsMBx
 ![image](https://github.com/user-attachments/assets/435961a2-da6b-4b17-8dee-b172b514d1fd)
 *Inventory Page*
 
-Click [here]() to view my dashboard!
+Click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/e1aa9d7befb354e956b30f5de14eb7155fe28111/Visualization%20Project/Power%20BI%20Project/Dairy%20Goods%20Sales/Dairy%20Goods%20Sales%20Analysis.pbix) to view my dashboard!
 
