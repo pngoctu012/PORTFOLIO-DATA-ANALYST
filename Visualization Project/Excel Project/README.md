@@ -3,10 +3,9 @@ COVID-19 ANALYSIS DASHBOARD
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction]()
-- [Dataset]()
-- [Solution]()
-- [Results]()
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Excel%20Project#introduction)
+- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Excel%20Project#dataset)
+- [Results](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Excel%20Project#results)
 
 --------------------------------------------------------------------
 # Introduction
@@ -36,7 +35,7 @@ You are tasked with creating a dashboard to effectively monitor and analyze this
 
 - WHO Region: WHO Region of data recording.
 
-To reach this dataset, please to click [here]()
+To reach this dataset, please to click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/Visualization%20Project/Excel%20Project/covid_19_dataset.csv)
 
 -------------------------------------------------------------------
 # Results
@@ -46,5 +45,5 @@ To reach this dataset, please to click [here]()
 ![image](https://github.com/user-attachments/assets/a9e7bfbe-b32a-4c97-88cd-71c10a432a76)
 *WHO Region Page*
 
-Click [here]() to view my dashboard!
+Click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/Visualization%20Project/Excel%20Project/Covid-19%20Dashboard.xlsx) to view my dashboard!
 
