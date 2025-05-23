@@ -3,10 +3,10 @@ DAIRY GOODS SALES DASHBOARD
 
 **📝 Table of contents**
 -------------------------------------------------------------------
-- [Introduction]()
-- [Dataset]()
-- [Solution]()
-- [Results]()
+- [Introduction](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#introduction)
+- [Dataset](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#dataset)
+- [Solution](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#solution)
+- [Results](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/tree/main/Visualization%20Project/Power%20BI%20Project#results)
 
 --------------------------------------------------------------------
 # Introduction
@@ -62,7 +62,7 @@ Based on this dataset, we can perform a comprehensive analysis of the business p
 
 - Reorder Quantity (liters/kg): Recommended reorder quantity for the product.
 
-To reach this dataset, please to click [here]()
+To reach this dataset, please to click [here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/Visualization%20Project/Power%20BI%20Project/dairy_dataset.csv)
 
 -------------------------------------------------------------------
 # Solution
