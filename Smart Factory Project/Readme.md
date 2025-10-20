@@ -1,9 +1,9 @@
 SMART FACTORY PROJECT
 -------------------------------------------------
 **1. Description**
-
 This project was conducted for a chemical fertilizer manufacturing plant, focusing on data standardization and storage to enable third-party access via Power BI. The project consisted of two main modules: Production Planning and Plant Maintenance.
 My responsibilities included mapping data tables according to business requirements and developing comprehensive test scenarios to ensure data accuracy and consistency across systems. 
+
 ---------------------------------------------------
 I was assigned to perform data mapping for the table AGG_PMS_TABLE, which consolidates key information including procurement plans, purchase orders, and contract details. The data is analyzed across multiple dimensions such as time, requesting department, requester, executing unit, functional unit, and overall maintenance.
 The AGG_PMS_TABLE is an aggregated table derived from four source tables:
