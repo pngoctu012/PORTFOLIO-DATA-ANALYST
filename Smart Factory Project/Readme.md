@@ -1,6 +1,7 @@
 SMART FACTORY PROJECT
 -------------------------------------------------
 **1. Description**
+
 This project was conducted for a chemical fertilizer manufacturing plant, focusing on data standardization and storage to enable third-party access via Power BI. The project consisted of two main modules: Production Planning and Plant Maintenance.
 My responsibilities included mapping data tables according to business requirements and developing comprehensive test scenarios to ensure data accuracy and consistency across systems. 
 
