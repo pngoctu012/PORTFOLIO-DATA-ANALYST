@@ -7,6 +7,7 @@ My responsibilities included mapping data tables according to business requireme
 
 ---------------------------------------------------
 **2. Table Detail Information**
+
 I was assigned to perform data mapping for the table AGG_PMS_TABLE, which consolidates key information including procurement plans, purchase orders, and contract details. The data is analyzed across multiple dimensions such as time, requesting department, requester, executing unit, functional unit, and overall maintenance.
 The AGG_PMS_TABLE is an aggregated table derived from four source tables:
 - AGG_REQ_PURCHS
@@ -40,6 +41,7 @@ Code Mapping: [Here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/m
 
 ---------------------------------------------------
 **3. Test SIT**
+
 In this phase, I was responsible for developing test scripts to validate column-level data mapping between the SOURCE IMAGE and GLD layers. The testing process focused on verifying:
 
 - Record count: Ensuring all expected records were successfully loaded.
@@ -54,6 +56,7 @@ Test script: [Here](https://docs.google.com/spreadsheets/d/16DCfRiaeK_pfVdzqQhOu
 
 ----------------------------------------------------------
 **4. Test UAT**
+
 In this phase, I developed test scenarios based on user business requirements and vendor report validation to ensure dashboards and visualizations aligned with real operational logic.
 The testing scope covered verification of measures, KPIs, filters, drill-down functions, and time-period logic to confirm their accuracy and consistency with business rules.
 
