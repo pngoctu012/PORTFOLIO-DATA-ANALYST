@@ -52,7 +52,7 @@ In this phase, I was responsible for developing test scripts to validate column-
 
 - Business rules: Confirming that only data meeting specific criteria (e.g., status = “active”) was correctly loaded into the target layer.
 
-Test script: [Here](https://docs.google.com/spreadsheets/d/16DCfRiaeK_pfVdzqQhOuTIa6ndcsp-8cR-9BZ2z_F1o/edit?usp=sharing)
+Test script: [Here](https://docs.google.com/spreadsheets/d/16DCfRiaeK_pfVdzqQhOuTIa6ndcsp-8cR-9BZ2z_F1o/edit?gid=0#gid=0)
 
 ----------------------------------------------------------
 **4. Test UAT**
@@ -66,4 +66,4 @@ Since the semantic model and visualizations (including measures such as Revenue,
 - SVT Team Responsibilities:
 The internal SVT team focused on ensuring the accuracy and completeness of the GLD layer, providing the validated data source for the vendor’s testing and reporting.
 
-Test script: [Here]()
+Test script: [Here](https://docs.google.com/spreadsheets/d/16DCfRiaeK_pfVdzqQhOuTIa6ndcsp-8cR-9BZ2z_F1o/edit?gid=1554758116#gid=1554758116)
