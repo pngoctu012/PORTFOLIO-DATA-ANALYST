@@ -13,6 +13,7 @@ Dự án này bao gồm 4 phase chính:
 *Phase 3 – Data Standardization & User Training:* Worked with the data engineering team to map data across Bronze, Silver and Golden layers in Azure Synapse. Conducted user training sessions to ensure proper data entry aligned with mapped structures.
 
 *Phase 4 – Testing (SIT & UAT):* Developed and executed SIT test scripts to validate data flow from Source Image to Golden Layer. Guided users in performing UAT, managing defect logging, and writing UAT test scenarios.
+
 ----------------------------------------------------------------
 **2. Phase 1 – Documentation Analysis**
 
