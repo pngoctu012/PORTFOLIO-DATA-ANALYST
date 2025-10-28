@@ -1,10 +1,10 @@
 Research Center Digitalization
 --------------------------------------------------------
-**1. Introduction**
+# **1. Introduction**
 
 Đây là một dự án chuyển đổi số cho trung tâm nghiên cứu phân bón cho cây trồng. Ở dự án này, tôi chịu trách nhiệm chính trong việc tham gia xây dựng dashboard theo dõi và quản lý ngân sách cho trung tâm.
 
-Dự án này bao gồm 4 phase chính:
+Dự án này bao gồm 3 phase chính:
 
 *Phase 1 – Documentation Analysis:* Reviewed and decomposed user-provided documentation into structured data tables for storage and Power BI integration. Prepared initial dashboard demos to visualize key data points.
 
@@ -12,15 +12,13 @@ Dự án này bao gồm 4 phase chính:
 
 *Phase 3 – Data Standardization & User Training:* Worked with the data engineering team to map data across Bronze, Silver and Golden layers in Azure Synapse. Conducted user training sessions to ensure proper data entry aligned with mapped structures.
 
-*Phase 4 – Testing (SIT & UAT):* Developed and executed SIT test scripts to validate data flow from Source Image to Golden Layer. Guided users in performing UAT, managing defect logging, and writing UAT test scenarios.
-
 ----------------------------------------------------------------
-**2. Phase 1 – Documentation Analysis**
+# **2. Phase 1 – Documentation Analysis**
 
 Ở giai đoạn này tôi sẽ nhận các file tài liệu về ngân sách của Trung tâm nghiên cứu để phân tích và tách ra thành các bảng dữ liệu có cấu trúc để đưa lên PowerBI. 
 Theo đó, tôi tách các file tài liệu thành các bảng sau:
 
-**2.1. Bảng KhoanMucNganSach**
+## **2.1. Bảng KhoanMucNganSach**
 
 Đây là bảng với dạng cây hierarchy dùng để lưu lại các đầu mục trong báo cáo ngân sách theo tháng của Trung tâm nghiên cứu. Bao gồm các cột:
 - item_id: là mã khoản mục, format theo dạng năm - mã
@@ -50,7 +48,7 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 | 2025 - 2.2.1.3   | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                                                                                                                                          | 2025 - 2.2.1   | 2025 - 2 | 2025 - 2.2 | 2025 - 2.2.1 | 2025 - 2.2.1.3 | 2025 - 2.2.1.3   | KINH PHÍ NGHIÊN CỨU KHOA HỌC | Kinh phí Hỗ trợ phát triển KH&CN             | MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                     | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                                                                                                                                          |TC04|
 | 2025 - 2.2.1.4   | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                                                                                                                                               | 2025 - 2.2.1   | 2025 - 2 | 2025 - 2.2 | 2025 - 2.2.1 | 2025 - 2.2.1.4 | 2025 - 2.2.1.4   | KINH PHÍ NGHIÊN CỨU KHOA HỌC | Kinh phí Hỗ trợ phát triển KH&CN             | MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                          | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                                                                                                                                               |TC04|
 
-**2.2. Bảng GiaiNgan**
+## **2.2. Bảng GiaiNgan**
 
 Đây là bảng được dùng để ghi nhận các hạch toán giải ngân của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
 - posting_id: là mã hạch toán
@@ -81,7 +79,7 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 |----------|------------|----------|------------|------------------|---------------------|------------|--------|-----------|------|-------|-----------|
 |1|31/08/2025|2521000233|31/08/2025|nan|nan|2412000094|AA|KC VAT DV tháng 8 HÐ 01/HDDV-NCPT/PVCFC-MNM|12038248|2025 - 2.2.1.2.5|KHCN|
 
-**2.3. Bảng GiaiNgan_Luong**
+## **2.3. Bảng GiaiNgan_Luong**
 
 Đây là bảng được dùng để ghi nhận các hạch toán của Trung tâm nghiên cứu về các chi phí giải ngân liên quan tới lương như tiền lương, bảo hiểm xã hội,... Ở đây, tôi tách chi phí giải ngân lương ra thành một bảng riêng vì nó được ghi nhận theo từng tháng còn các chi phí khác thì được ghi nhận theo từng ngày. Bao gồm các cột:
 
@@ -99,7 +97,7 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 |-------------|-------|-----|------|-----------|
 |1|2025 - 1.1.1|1|1273710471|SXKD|
 
-**2.4. Bảng KeHoach**
+## **2.4. Bảng KeHoach**
 
 Đây là bảng được dùng để ghi nhận các kế hoạch của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
 - budget_id: là mã kế hoạch
@@ -235,6 +233,7 @@ Dashboard sau khi đã chốt sẽ bao gồm 2 page là:
 *Trang chi tiết*
 <img width="1428" height="799" alt="image" src="https://github.com/user-attachments/assets/2e2c9d10-74ba-4aba-849c-4b264d8f8f3f" />
 
+
 ----------------------------------------------------------------
 **4. Phase 3 – Data Standardization & User Training**
 
@@ -242,6 +241,5 @@ Dashboard sau khi đã chốt sẽ bao gồm 2 page là:
 
 Tham khảo file chuẩn hoá dữ liệu của tôi ở [Here](https://docs.google.com/spreadsheets/d/1ntJxwTiVIoimatcvIdWPxkfUXc-mYf5gysx4Eb-OIj4/edit?usp=sharing)
 
-
-
+Tham khảo file mapping của tôi ở [Here](https://docs.google.com/spreadsheets/d/119ViW7jXaYFH2L2y14DkZTxuQQyINyGkce2lWPnb-fc/edit?usp=sharing)
 
