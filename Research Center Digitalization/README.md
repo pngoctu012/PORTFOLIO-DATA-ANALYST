@@ -100,6 +100,7 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 |1|2025 - 1.1.1|1|1273710471|SXKD|
 
 **2.4. Bảng KeHoach**
+
 Đây là bảng được dùng để ghi nhận các kế hoạch của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
 - budget_id: là mã kế hoạch
 
