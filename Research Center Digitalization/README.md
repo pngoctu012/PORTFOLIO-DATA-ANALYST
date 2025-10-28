@@ -2,40 +2,43 @@ Research Center Digitalization
 --------------------------------------------------------
 # **1. Introduction**
 
-Đây là một dự án chuyển đổi số cho trung tâm nghiên cứu phân bón cho cây trồng. Ở dự án này, tôi chịu trách nhiệm chính trong việc tham gia xây dựng dashboard theo dõi và quản lý ngân sách cho trung tâm.
+This project focused on the digital transformation of a research center specializing in crop fertilizers. In this project, I was primarily responsible for developing a budget monitoring and management dashboard for the center.
 
-Dự án này bao gồm 3 phase chính:
+The project was divided into three main phases:
 
-*Phase 1 – Documentation Analysis:* Reviewed and decomposed user-provided documentation into structured data tables for storage and Power BI integration. Prepared initial dashboard demos to visualize key data points.
+*Phase 1 – Documentation Analysis:*
+Reviewed and converted user-provided documents into structured data tables for storage and Power BI integration. Created initial dashboard prototypes to visualize essential financial and operational data.
 
-*Phase 2 – Requirement Gathering & UI Design:* Collaborated directly with end users to define KPIs, charts, views, slicers and metrics through brainstorming sessions. Designed and refined UI prototypes based on user feedback.
+*Phase 2 – Requirement Gathering & UI Design:*
+Collaborated closely with end users to define KPIs, charts, filters, and key metrics through multiple brainstorming sessions. Designed and iteratively refined UI prototypes based on user feedback to enhance usability and insight delivery.
 
-*Phase 3 – Data Standardization & User Training:* Worked with the data engineering team to map data across Bronze, Silver and Golden layers in Azure Synapse. Conducted user training sessions to ensure proper data entry aligned with mapped structures.
+*Phase 3 – Data Standardization & User Training:*
+Worked alongside the data engineering team to standardize and map data across Bronze, Silver, and Gold layers in Azure Synapse. Conducted user training sessions to ensure accurate data entry and proper use of the dashboard according to the established data model.
 
 ----------------------------------------------------------------
 # **2. Phase 1 – Documentation Analysis**
 
-Ở giai đoạn này tôi sẽ nhận các file tài liệu về ngân sách của Trung tâm nghiên cứu để phân tích và tách ra thành các bảng dữ liệu có cấu trúc để đưa lên PowerBI. 
-Theo đó, tôi tách các file tài liệu thành các bảng sau:
+In this phase, I received the research center’s budget documents for analysis and decomposed them into structured data tables for Power BI integration.
+Accordingly, I separated the documents into the following tables:
 
-## **2.1. Bảng KhoanMucNganSach**
+## **2.1. Table KhoanMucNganSach**
 
-Đây là bảng với dạng cây hierarchy dùng để lưu lại các đầu mục trong báo cáo ngân sách theo tháng của Trung tâm nghiên cứu. Bao gồm các cột:
-- item_id: là mã khoản mục, format theo dạng năm - mã
+This table follows a hierarchical tree structure used to store the budget report items by month for the Research Center. It includes the following columns:
+- item_id: The unique code of each budget item, formatted as year–code.
 
-- name: là tên khoản mục
+- name: The name of the budget item.
 
-- parent_id: là tên khoản mục cha
+- parent_id: The name of the parent item.
 
-- level1 - namelevel1: là mã và tên của khoản mục ở level 1 trong cây hierarchy.
+- level1 – namelevel1: The code and name of the item at Level 1 in the hierarchy.
 
-- level2 - namelevel2: là mã và tên của khoản mục ở level 2 trong cây hierarchy.
+- level2 – namelevel2: The code and name of the item at Level 2 in the hierarchy.
 
-- level3 - namelevel3: là mã và tên của khoản mục ở level 3 trong cây hierarchy.
+- level3 – namelevel3: The code and name of the item at Level 3 in the hierarchy.
 
-- level4 - namelevel4: là mã và tên của khoản mục ở level 4 trong cây hierarchy.
- 
-- level5 - namelevel5: là mã và tên của khoản mục ở level 5 trong cây hierarchy. 
+- level4 – namelevel4: The code and name of the item at Level 4 in the hierarchy.
+
+- level5 – namelevel5: The code and name of the item at Level 5 in the hierarchy. 
 
 |item_id|name|parent_id|level1|level2|level3|level4|level5|name_level1|name_level2|name_level3|name_level4|name_level5|attribute_code|
 |-------|----|---------|------|------|------|------|------|-----------|-----------|-----------|-----------|-----------|--------------|
@@ -48,120 +51,124 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 | 2025 - 2.2.1.3   | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                                                                                                                                          | 2025 - 2.2.1   | 2025 - 2 | 2025 - 2.2 | 2025 - 2.2.1 | 2025 - 2.2.1.3 | 2025 - 2.2.1.3   | KINH PHÍ NGHIÊN CỨU KHOA HỌC | Kinh phí Hỗ trợ phát triển KH&CN             | MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                     | Hoạt động 3: Mua sắm tài liệu chuyên môn                                                                                                                                                                                                          |TC04|
 | 2025 - 2.2.1.4   | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                                                                                                                                               | 2025 - 2.2.1   | 2025 - 2 | 2025 - 2.2 | 2025 - 2.2.1 | 2025 - 2.2.1.4 | 2025 - 2.2.1.4   | KINH PHÍ NGHIÊN CỨU KHOA HỌC | Kinh phí Hỗ trợ phát triển KH&CN             | MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                          | Hoạt động 4: Tổ chức họp hội đồng xét duyệt, nghiệm thu đề tài, kết quả khảo nghiệm                                                                                                                                                               |TC04|
 
-## **2.2. Bảng GiaiNgan**
+## **2.2. Table GiaiNgan**
 
-Đây là bảng được dùng để ghi nhận các hạch toán giải ngân của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
-- posting_id: là mã hạch toán
+This table is used to record the disbursement transactions of the Research Center related to production expenses and investments in science and technology. It includes the following columns:
 
-- posting_date: là ngày hạch toán
+- posting_id: The transaction posting code.
 
-- voucher_no: là số chứng từ
+- posting_date: The posting date.
 
-- voucher_date: là ngày chứng từ
+- voucher_no: The voucher number.
 
-- payment_voucher_no: là số chứng từ thanh toán (UNC/PC)
+- voucher_date: The voucher date.
 
-- payment_voucher_date: là ngày chứng từ thanh toán
+- payment_voucher_no: The payment voucher number (UNC/PC).
 
-- account_code: là mã tài khoản kế toán
+- payment_voucher_date: The payment voucher date.
 
-- doc_type: là loại chứng từ
+- account_code: The accounting account code.
 
-- description: là mô tả
+- doc_type: The document type.
 
-- amount: là số tiền giải ngân
+- description: A brief description of the transaction.
 
-- item_id: là mã khoản mục ngân sách
+- amount: The disbursed amount.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ)
+- item_id: The budget item code.
+
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
 
 |posting_id|posting_date|voucher_no|voucher_date|payment_voucher_no|payyment_voucher_date|account_code|doc_type|description|amount|item_id|source_type|
 |----------|------------|----------|------------|------------------|---------------------|------------|--------|-----------|------|-------|-----------|
 |1|31/08/2025|2521000233|31/08/2025|nan|nan|2412000094|AA|KC VAT DV tháng 8 HÐ 01/HDDV-NCPT/PVCFC-MNM|12038248|2025 - 2.2.1.2.5|KHCN|
 
-## **2.3. Bảng GiaiNgan_Luong**
+## **2.3. Table GiaiNgan_Luong**
 
-Đây là bảng được dùng để ghi nhận các hạch toán của Trung tâm nghiên cứu về các chi phí giải ngân liên quan tới lương như tiền lương, bảo hiểm xã hội,... Ở đây, tôi tách chi phí giải ngân lương ra thành một bảng riêng vì nó được ghi nhận theo từng tháng còn các chi phí khác thì được ghi nhận theo từng ngày. Bao gồm các cột:
+This table is used to record the Research Center’s disbursement transactions related to salary expenses, such as wages, social insurance, etc. I separated salary disbursements into a dedicated table because they are recorded monthly, while other expenses are recorded daily. The table includes the following columns:
 
-- hr_posting_id: là mã hạch toán giải ngân lương
+- hr_posting_id: The salary disbursement posting code.
 
-- item_id: là mã khoản mục ngân sách
+- item_id: The budget item code.
 
-- month: là tháng ghi nhận hạch toán
+- month: The month of the transaction record.
 
-- amount: là số tiền giải ngân
+- amount: The disbursed amount.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ) 
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
 
 |hr_posting_id|item_id|month|amount|source_type|
 |-------------|-------|-----|------|-----------|
 |1|2025 - 1.1.1|1|1273710471|SXKD|
 
-## **2.4. Bảng KeHoach**
+## **2.4. Table KeHoach**
 
-Đây là bảng được dùng để ghi nhận các kế hoạch của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
-- budget_id: là mã kế hoạch
+This table is used to record the Research Center’s planned budgets for production expenses and investments in science and technology. It includes the following columns:
 
-- month: là tháng kế hoạch
+- budget_id: The budget plan code.
 
-- amount: là số tiền kế hoạch
+- month: The planning month.
 
-- item_id: là mã khoản mục ngân sách
+- amount: The planned amount.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ)
+- item_id: The budget item code.
 
-- status: là tình trạng là kế hoạch từ đầu năm hoặc là phát sinh trong năm (gồm 2 giá trị là "Phát sinh" và "Không phát sinh")
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
+
+- status: Indicates whether the plan was established at the beginning of the year or newly added during the year (“Phát sinh” – Newly added, “Không phát sinh” – Original plan).
 
 |budget_id|month|amount|item_id|source_type|status|
 |---------|-----|------|-------|-----------|------|
 |KH1|3|200000000|2025 - 2.1.1.1.1|KHCN|Không phát sinh|
 
-**2.5. Bảng ThucHien**
+## **2.5. Table ThucHien**
 
-Đây là bảng được dùng để ghi nhận các chi phí thực hiện được lấy theo giá trị hợp đồng của Trung tâm nghiên cứu về các chi phí sản xuất và chi phí đầu tư vào khoa học công nghệ. Bao gồm các cột:
-- PO_number: là số hợp đồng
+This table is used to record the actual expenses based on contract values of the Research Center, covering both production costs and investments in science and technology. It includes the following columns:
 
-- item_id: là mã khoản mục ngân sách
+- PO_number: The contract number.
 
-- amount: là số tiền thực hiện
+- item_id: The budget item code.
 
-- contract_date: là ngày ký hợp đồng
+- amount: The actual expense amount.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ)
+- contract_date: The contract signing date.
+
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
 
 |PO_number|item_id|amount|contract_date|source_type|
 |---------|-----|------|-------|-----------|
 |5100007397|2025 - 2.1.1.1.1|8040000|25/01/2025|KHCN|
 
-**2.6. Bảng NguonVon**
+## **2.6. Table NguonVon**
 
-Đây là bảng được dùng để ghi nhận số tiền nhận được từ công ty mẹ của Trung tâm nghiên cứu cho từng quý. Bao gồm các cột:
-- capital_source_code: là mã nguồn vốn
+This table is used to record the funds received from the parent company by the Research Center on a quarterly basis. It includes the following columns:
 
-- posting_date: là ngày hạch toán
+- capital_source_code: The capital source code.
 
-- voucher_no: là số chứng từ
+- posting_date: The posting date.
 
-- voucher_date: là ngày chứng từ
+- voucher_no: The voucher number.
 
-- description: là mô tả nội dung
+- voucher_date: The voucher date.
 
-- account_code: là tài khoản kế toán
+- description: A description of the transaction.
 
-- amount: là số tiền được cấp
+- account_code: The accounting account code.
+
+- amount: The amount of capital received.
 
 |capital_source_code|posting_date|voucher_no|voucher_date|description|account_code|amount|
 |-------------------|------------|----------|------------|-----------|------------|------|
 |NV1|13/01/2025|2512010002|13/01/2025|Nhận KP hoạt động quý 1-2025 theo QĐ 52|1121030202|5000000000|
 
-**2.7. Bảng TinhChatMucTieu**
+## **2.7. Table TinhChatMucTieu**
 
-Bởi vì các mục tiêu ở các năm có thể sẽ khác nhau nhưng đều mang cùng 1 tính chất, đây là lí do xuất hiện bảng này. Gồm các cột:
-- attribute_code: là mã tính chất
+Because the objectives may vary from year to year but share the same characteristics, this table was created for that purpose. It includes the following columns:
+- attribute_code: The attribute code.
 
-- attribute_name: là tên tính chất
+- attribute_name: The attribute name.
 
-- department: là phòng ban chịu trách nhiệm
+- department: The responsible department.
 
 |attribute_code|attribute_name|department|
 |--------------|--------------|----------|
@@ -170,76 +177,81 @@ Bởi vì các mục tiêu ở các năm có thể sẽ khác nhau nhưng đều
 |TC03|Mục tiêu 3: Nghiên cứu về công nghệ sau thu hoạch|Phòng Công nghệ sau thu hoạch|
 |TC04|Mục tiêu 4: Tăng cường cơ sở vật chất - Hỗ trợ KHCN|Phòng Kế hoạch thương mại|
 
-**2.8. Bảng union_bar_chart**
+## **2.8. Bảng union_bar_chart**
 
-Đây là bảng được hình thành dựa vào yêu cầu theo dõi các chi phí theo mục tiêu và chi phí hoạt động. Bởi vì khoản mục chi phí hoạt động đang nằm ở level 2 trong cây hierarchy nhưng các mục tiêu lại nằm ở level 3 trong cây hierarchy nên không thể đưa vào chart được. Chính vì thế nên tôi đã brainstorm ra được giải pháp là tạo ra một cột node_type để đánh dấu cái nào là mục tiêu, cái nào là chi phí hoạt động. Gồm các cột:
-- year: là năm ghi nhận các chi phí
+This table was created to meet the requirement of tracking expenses by both objectives and operational costs. Since operational cost items are located at Level 2 in the hierarchy tree while objectives are at Level 3, they could not be displayed together in the same chart. Therefore, I brainstormed a solution to introduce a node_type column to distinguish between objectives and operational costs. The table includes the following columns:
+- year: The year in which the expenses are recorded.
 
-- node_type: là cột đánh dấu các đầu mục (gồm các giá trị: "Chi phí hoạt động", "MỤC TIÊU 1: Nghiên cứu đa dạng hoá sản phẩm theo chiến lược của công ty", "MỤC TIÊU 2: Nghiên cứu quy trình canh tác trên cây trồng", "MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu", "MỤC TIÊU 3: Nghiên cứu về công nghệ sau thu hoạch")
+- node_type: A column used to categorize items (values include: "Chi phí hoạt động", "MỤC TIÊU 1: Nghiên cứu đa dạng hoá sản phẩm theo chiến lược của công ty", "MỤC TIÊU 2: Nghiên cứu quy trình canh tác trên cây trồng", "MỤC TIÊU 4: Tăng cường cơ sở vật chất và nguồn lực triển khai các hoạt động hỗ trợ KHCN đáp ứng nhu cầu hoạt động nghiên cứu", "MỤC TIÊU 3: Nghiên cứu về công nghệ sau thu hoạch")
 
-- amount: là số tiền
+- amount: The expense amount.
 
-- cost_type: là loại chi phí (gồm các giá trị: "Giải ngân", "Kế hoạch", "Thực hiện")
+- cost_type: The type of cost (values include: "Giải ngân", "Kế hoạch", "Thực hiện")
 
 |year|node_type|amount|cost_type|
 |----|---------|------|---------|
 |2025|MỤC TIÊU 3: Nghiên cứu về công nghệ sau thu hoạch|18375000|Giải ngân|
 
-**2.9. Bảng union_du_phong**
+## **2.9. Table union_du_phong**
 
-Đây là bảng được hình thành dựa vào yêu cầu theo dõi các loại chi phí theo khoản mục dự phòng, tương tự như vấn đề ở trên, chi phí dự phòng cho CPSX và KHCN đều đang ở những level khác nhau nên cần gộp lại để đưa lên chart. Bao gồm các cột:
-- year: là năm ghi nhận các chi phí
+This table was created to meet the requirement of tracking expense types related to contingency (reserve) items. Similar to the previous issue, the contingency costs for Production & Business (SXKD) and Science & Technology (KHCN) exist at different hierarchy levels, so they needed to be consolidated for chart visualization.
 
-- node_type: là cột đánh dấu các đầu mục (chỉ gồm giá trị "Dự phòng")
+The table includes the following columns:
+- year: The year in which the expenses are recorded.
 
-- amount: là số tiền
+- node_type: A column used to categorize items (only includes the value "Dự phòng")
 
-- cost_type: là loại chi phí (gồm các giá trị: "Giải ngân", "Kế hoạch", "Thực hiện")
+- amount: The expense amount.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ)
+- cost_type: The type of cost (values include: "Giải ngân", "Kế hoạch", "Thực hiện")
+
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
 
 |year|node_type|amount|cost_type|source_type|
 |----|---------|------|---------|-----------|
 |2025|Dự phòng|533117000|Kế hoạch|SXKD|
 
-**2.10. Bảng union_table**
+## **2.10. Table union_table**
 
-Đây là bảng được hình thành dựa vào yêu cầu theo dõi các loại chi phí theo từng khoản mục. Tuy nhiên, yêu cầu của User là cần xem chi phí giải ngân theo 12 tháng đồng thời xem chi phí kế hoạch, giải ngân và thực hiện theo năm trên cùng một matrix nên tôi cần thể hiện lên cột node_type để phân loại chi phí giải ngân theo các tháng và các chi phí theo năm. Bao gồm các cột:
-- item_id: là mã khoản mục ngân sách
+This table was created to meet the requirement of tracking expenses by each budget item. However, the user requested to view monthly disbursement expenses (for all 12 months) together with annual planned, disbursed, and actual expenses within the same matrix. Therefore, I introduced the node_type column to categorize monthly and yearly expense types accordingly.
 
-- node_type: là cột đánh dấu các đầu mục (gồm các giá trị: "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 'Giải ngân", "Kế hoạch", "Thực hiện")
+The table includes the following columns:
+- item_id: The budget item code.
 
-- year: là năm ghi nhận các chi phí
+- node_type: A column used to categorize items (values include: "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 'Giải ngân", "Kế hoạch", "Thực hiện")
 
-- amount: là số tiền
+- year: The year in which the expenses are recorded.
 
-- source_type: là loại nguồn chi phí (có 2 loại là "SXKD" - sản xuất kinh doanh và "KHCN" - khoa học công nghệ)
+- amount: The expense amount.
+
+- source_type: The type of cost source (two types: “SXKD” – Production & Business, and “KHCN” – Science & Technology).
 
 |item_id|node_type|year|amount|source_type|
 |-------|---------|----|------|-----------|
 |2024 - 1.2.1.18|Giải ngân|2024|2200000|SXKD|
 
 ----------------------------------------------------------------
-**3. Phase 2 – Requirement Gathering & UI Design**
+# **3. Phase 2 – Requirement Gathering & UI Design**
 
-Ở giai đoạn này, tôi sẽ onsite tại công ty của khách hàng để khơi gợi yêu cầu của User, từ đó sẽ chỉnh sửa lại UI dashboard sao cho phù hợp với yêu cầu của User nhất.
-Tham khảo các yêu cầu của khác hàng [Here](https://docs.google.com/spreadsheets/d/1I1sp5kQhfaQMg6ObeyzJdy1R5hwzAKTp7uh-C-FVrnc/edit?usp=sharing)
+In this phase, I worked onsite at the client’s company to gather and clarify user requirements. Based on these discussions, I refined the dashboard UI to best align with the users’ needs and expectations.
+You can refer to the client’s detailed requirements [Here](https://docs.google.com/spreadsheets/d/1I1sp5kQhfaQMg6ObeyzJdy1R5hwzAKTp7uh-C-FVrnc/edit?usp=sharing)
 
-Dashboard sau khi đã chốt sẽ bao gồm 2 page là: 
-*Trang tổng quan:*
+The finalized dashboard consists of two main pages:
+*Overview Page:*
 <img width="1422" height="798" alt="image" src="https://github.com/user-attachments/assets/cddef739-38a3-42bc-b67b-6249f0503a9c" />
 <img width="1425" height="800" alt="image" src="https://github.com/user-attachments/assets/286a26f1-8b5a-4bf9-bfd0-02f1249c01ce" />
 
-*Trang chi tiết*
+*Detail Page:*
 <img width="1428" height="799" alt="image" src="https://github.com/user-attachments/assets/2e2c9d10-74ba-4aba-849c-4b264d8f8f3f" />
 
+*Due to data confidentiality, I am unable to make the Power BI file publicly available.*
 
 ----------------------------------------------------------------
-**4. Phase 3 – Data Standardization & User Training**
+# **4. Phase 3 – Data Standardization & User Training**
 
-Ở giai đoạn này, nhiệm vụ của tôi là làm việc với team Data Engineer để tạo ra các templates để hướng dẫn khách hàng nhập liệu theo ý muốn của mình và mapping để team DE kéo lên các bảng ở tầng Bronze, Silver và Golden.
+In this phase, my main responsibility was to collaborate with the Data Engineering team to develop data entry templates that guide the client in inputting information according to their requirements. I also worked on data mapping to enable the Data Engineering team to integrate the data into the Bronze, Silver, and Gold layers.
 
-Tham khảo file chuẩn hoá dữ liệu của tôi ở [Here](https://docs.google.com/spreadsheets/d/1ntJxwTiVIoimatcvIdWPxkfUXc-mYf5gysx4Eb-OIj4/edit?usp=sharing)
+You can refer to my data standardization file at [Here](https://docs.google.com/spreadsheets/d/1ntJxwTiVIoimatcvIdWPxkfUXc-mYf5gysx4Eb-OIj4/edit?usp=sharing)
 
-Tham khảo file mapping của tôi ở [Here](https://docs.google.com/spreadsheets/d/119ViW7jXaYFH2L2y14DkZTxuQQyINyGkce2lWPnb-fc/edit?usp=sharing)
+You can refer to my mapping file at [Here](https://docs.google.com/spreadsheets/d/119ViW7jXaYFH2L2y14DkZTxuQQyINyGkce2lWPnb-fc/edit?usp=sharing)
 
