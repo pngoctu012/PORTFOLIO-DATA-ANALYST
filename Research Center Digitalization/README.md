@@ -237,6 +237,11 @@ Dashboard sau khi đã chốt sẽ bao gồm 2 page là:
 
 ----------------------------------------------------------------
 **4. Phase 3 – Data Standardization & User Training**
+
 Ở giai đoạn này, nhiệm vụ của tôi là làm việc với team Data Engineer để tạo ra các templates để hướng dẫn khách hàng nhập liệu theo ý muốn của mình và mapping để team DE kéo lên các bảng ở tầng Bronze, Silver và Golden.
+
+Tham khảo file chuẩn hoá dữ liệu của tôi ở [Here](https://docs.google.com/spreadsheets/d/1ntJxwTiVIoimatcvIdWPxkfUXc-mYf5gysx4Eb-OIj4/edit?usp=sharing)
+
+
 
 
