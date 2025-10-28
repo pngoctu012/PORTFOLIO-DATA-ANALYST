@@ -223,6 +223,7 @@ Bởi vì các mục tiêu ở các năm có thể sẽ khác nhau nhưng đều
 
 ----------------------------------------------------------------
 **3. Phase 2 – Requirement Gathering & UI Design**
+
 Ở giai đoạn này, tôi sẽ onsite tại công ty của khách hàng để khơi gợi yêu cầu của User, từ đó sẽ chỉnh sửa lại UI dashboard sao cho phù hợp với yêu cầu của User nhất.
 Tham khảo các yêu cầu của khác hàng [Here](https://docs.google.com/spreadsheets/d/1I1sp5kQhfaQMg6ObeyzJdy1R5hwzAKTp7uh-C-FVrnc/edit?usp=sharing)
 
