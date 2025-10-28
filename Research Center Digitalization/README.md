@@ -152,8 +152,6 @@ Theo đó, tôi tách các file tài liệu thành các bảng sau:
 
 - amount: là số tiền được cấp
 
-- year: là năm được cấp tiền
-
 |capital_source_code|posting_date|voucher_no|voucher_date|description|account_code|amount|
 |-------------------|------------|----------|------------|-----------|------------|------|
 |NV1|13/01/2025|2512010002|13/01/2025|Nhận KP hoạt động quý 1-2025 theo QĐ 52|1121030202|5000000000|
