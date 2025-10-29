@@ -1,12 +1,12 @@
 SMART FACTORY PROJECT
 -------------------------------------------------
-**1. Description**
+# **1. Description**
 
 This project was conducted for a chemical fertilizer manufacturing plant, focusing on data standardization and storage to enable third-party access via Power BI. The project consisted of two main modules: Production Planning and Plant Maintenance.
 My responsibilities included mapping data tables according to business requirements and developing comprehensive test scenarios to ensure data accuracy and consistency across systems. 
 
 ---------------------------------------------------
-**2. Table Detail Information**
+# **2. Table Detail Information**
 
 I was assigned to perform data mapping for the table AGG_PMS_TABLE, which consolidates key information including procurement plans, purchase orders, and contract details. The data is analyzed across multiple dimensions such as time, requesting department, requester, executing unit, functional unit, and overall maintenance.
 The AGG_PMS_TABLE is an aggregated table derived from four source tables:
@@ -40,7 +40,7 @@ Bảng AGG_PMS_TABLE:
 Code Mapping: [Here](https://github.com/pngoctu012/DATA-ANALYST-PORTFOLIO/blob/main/Smart%20Factory%20Project/AGG_PMS_TABLE.sql)
 
 ---------------------------------------------------
-**3. Test SIT**
+# **3. Test SIT**
 
 In this phase, I was responsible for developing test scripts to validate column-level data mapping between the SOURCE IMAGE and GLD layers. The testing process focused on verifying:
 
@@ -55,7 +55,7 @@ In this phase, I was responsible for developing test scripts to validate column-
 Test script: [Here](https://docs.google.com/spreadsheets/d/16DCfRiaeK_pfVdzqQhOuTIa6ndcsp-8cR-9BZ2z_F1o/edit?gid=0#gid=0)
 
 ----------------------------------------------------------
-**4. Test UAT**
+# **4. Test UAT**
 
 In this phase, I developed test scenarios based on user business requirements and vendor report validation to ensure dashboards and visualizations aligned with real operational logic.
 The testing scope covered verification of measures, KPIs, filters, drill-down functions, and time-period logic to confirm their accuracy and consistency with business rules.
